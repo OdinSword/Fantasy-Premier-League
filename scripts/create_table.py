@@ -9,8 +9,7 @@ from src.constants import DB_FIELDS
 # Database connection parameters
 dbname = "postgres"
 user = "postgres"
-##password = os.getenv("POSTGRES_PASSWORD")
-password = "shubhaM.9980"
+password = os.getenv("POSTGRES_PASSWORD")
 host = "localhost"
 
 # Connect to the database
@@ -29,17 +28,6 @@ def try_execute_sql(sql: str):
 
 
 def create_table(DB_FIELDS):
-    #"""
-    #Creates the rappel_conso table and its columns.
-    #"""
-    # create_table_sql = f"""
-    # CREATE TABLE rappel_conso_table (
-    #     {DB_FIELDS[0]} text PRIMARY KEY,
-    # """
-
-    # create_table_sql = f"""
-    # CREATE TABLE 
-    # """
 
     for key in DB_FIELDS:
         create_table_sql = f"""
