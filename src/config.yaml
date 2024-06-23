@@ -1,0 +1,12 @@
+# /ingest/config.yaml
+env: dev
+
+api:
+  baseurl: https://fantasy.premierleague.com/api
+  endpoints:
+    - name: bootstrap-static
+      tables: 
+        - elements
+        - teams
+    - name: fixtures
+  

@@ -1,0 +1,988 @@
+[2024-06-19T15:28:21.768+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kafka_spark_dag.pyspark_consumer scheduled__2024-06-19T11:27:02.595711+00:00 [queued]>
+[2024-06-19T15:28:21.773+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kafka_spark_dag.pyspark_consumer scheduled__2024-06-19T11:27:02.595711+00:00 [queued]>
+[2024-06-19T15:28:21.774+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-06-19T15:28:21.781+0000] {taskinstance.py:1382} INFO - Executing <Task(DockerOperator): pyspark_consumer> on 2024-06-19 11:27:02.595711+00:00
+[2024-06-19T15:28:21.787+0000] {standard_task_runner.py:57} INFO - Started process 424 to run task
+[2024-06-19T15:28:21.790+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'kafka_spark_dag', 'pyspark_consumer', 'scheduled__2024-06-19T11:27:02.595711+00:00', '--job-id', '184', '--raw', '--subdir', 'DAGS_FOLDER/dag_kafka_spark.py', '--cfg-path', '/tmp/tmpfwy40wud']
+[2024-06-19T15:28:21.791+0000] {standard_task_runner.py:85} INFO - Job 184: Subtask pyspark_consumer
+[2024-06-19T15:28:21.821+0000] {task_command.py:416} INFO - Running <TaskInstance: kafka_spark_dag.pyspark_consumer scheduled__2024-06-19T11:27:02.595711+00:00 [running]> on host 2ad9230613d5
+[2024-06-19T15:28:21.869+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='kafka_spark_dag' AIRFLOW_CTX_TASK_ID='pyspark_consumer' AIRFLOW_CTX_EXECUTION_DATE='2024-06-19T11:27:02.595711+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-19T11:27:02.595711+00:00'
+[2024-06-19T15:28:21.926+0000] {docker.py:343} INFO - Starting docker container from image rappel-conso/spark:latest
+[2024-06-19T15:28:21.984+0000] {docker.py:351} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2024-06-19T15:28:22.377+0000] {docker.py:413} INFO - [38;5;6mspark [38;5;5m15:28:22.37 [0m[38;5;2mINFO [0m ==>
+[2024-06-19T15:28:22.378+0000] {docker.py:413} INFO - [38;5;6mspark [38;5;5m15:28:22.37 [0m[38;5;2mINFO [0m ==> [1mWelcome to the Bitnami spark container[0m
+[2024-06-19T15:28:22.380+0000] {docker.py:413} INFO - [38;5;6mspark [38;5;5m15:28:22.37 [0m[38;5;2mINFO [0m ==> Subscribe to project updates by watching [1mhttps://github.com/bitnami/containers[0m
+[2024-06-19T15:28:22.382+0000] {docker.py:413} INFO - [38;5;6mspark [38;5;5m15:28:22.37 [0m[38;5;2mINFO [0m ==> Submit issues and feature requests at [1mhttps://github.com/bitnami/containers/issues[0m
+[2024-06-19T15:28:22.384+0000] {docker.py:413} INFO - [38;5;6mspark [38;5;5m15:28:22.38 [0m[38;5;2mINFO [0m ==>
+[2024-06-19T15:28:22.395+0000] {docker.py:413} INFO - 
+[2024-06-19T15:28:23.901+0000] {docker.py:413} INFO - :: loading settings :: url = jar:file:/opt/bitnami/spark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2024-06-19T15:28:23.970+0000] {docker.py:413} INFO - Ivy Default Cache set to: /opt/bitnami/spark/.ivy2/cache
+The jars for the packages stored in: /opt/bitnami/spark/.ivy2/jars
+[2024-06-19T15:28:23.974+0000] {docker.py:413} INFO - org.postgresql#postgresql added as a dependency
+org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+[2024-06-19T15:28:23.975+0000] {docker.py:413} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-838735bc-691c-406c-89fe-90538e7cc5c8;1.0
+	confs: [default]
+[2024-06-19T15:28:25.740+0000] {docker.py:413} INFO - found org.postgresql#postgresql;42.5.4 in central
+[2024-06-19T15:28:26.299+0000] {docker.py:413} INFO - found org.checkerframework#checker-qual;3.5.0 in central
+[2024-06-19T15:28:31.259+0000] {docker.py:413} INFO - found org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.0 in central
+[2024-06-19T15:28:32.288+0000] {docker.py:413} INFO - found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.0 in central
+[2024-06-19T15:28:32.819+0000] {docker.py:413} INFO - found org.apache.kafka#kafka-clients;3.4.1 in central
+[2024-06-19T15:28:33.358+0000] {docker.py:413} INFO - found org.lz4#lz4-java;1.8.0 in central
+[2024-06-19T15:28:33.905+0000] {docker.py:413} INFO - found org.xerial.snappy#snappy-java;1.1.10.3 in central
+[2024-06-19T15:28:36.226+0000] {docker.py:413} INFO - found org.slf4j#slf4j-api;2.0.7 in central
+[2024-06-19T15:28:40.397+0000] {docker.py:413} INFO - found org.apache.hadoop#hadoop-client-runtime;3.3.4 in central
+[2024-06-19T15:28:41.218+0000] {docker.py:413} INFO - found org.apache.hadoop#hadoop-client-api;3.3.4 in central
+[2024-06-19T15:28:45.427+0000] {docker.py:413} INFO - found commons-logging#commons-logging;1.1.3 in central
+[2024-06-19T15:28:45.971+0000] {docker.py:413} INFO - found com.google.code.findbugs#jsr305;3.0.0 in central
+[2024-06-19T15:28:51.873+0000] {docker.py:413} INFO - found org.apache.commons#commons-pool2;2.11.1 in central
+[2024-06-19T15:28:52.143+0000] {docker.py:413} INFO - downloading https://repo1.maven.org/maven2/org/postgresql/postgresql/42.5.4/postgresql-42.5.4.jar ...
+[2024-06-19T15:28:53.054+0000] {docker.py:413} INFO - [SUCCESSFUL ] org.postgresql#postgresql;42.5.4!postgresql.jar (1167ms)
+[2024-06-19T15:28:53.312+0000] {docker.py:413} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.5.0/spark-sql-kafka-0-10_2.12-3.5.0.jar ...
+[2024-06-19T15:28:53.620+0000] {docker.py:413} INFO - [SUCCESSFUL ] org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.0!spark-sql-kafka-0-10_2.12.jar (564ms)
+[2024-06-19T15:28:53.878+0000] {docker.py:413} INFO - downloading https://repo1.maven.org/maven2/org/checkerframework/checker-qual/3.5.0/checker-qual-3.5.0.jar ...
+[2024-06-19T15:28:54.155+0000] {docker.py:413} INFO - [SUCCESSFUL ] org.checkerframework#checker-qual;3.5.0!checker-qual.jar (535ms)
+[2024-06-19T15:28:54.413+0000] {docker.py:413} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-token-provider-kafka-0-10_2.12/3.5.0/spark-token-provider-kafka-0-10_2.12-3.5.0.jar ...
+[2024-06-19T15:28:54.678+0000] {docker.py:413} INFO - [SUCCESSFUL ] org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.0!spark-token-provider-kafka-0-10_2.12.jar (521ms)
+[2024-06-19T15:28:54.928+0000] {docker.py:413} INFO - downloading https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/3.4.1/kafka-clients-3.4.1.jar ...
+[2024-06-19T15:28:56.295+0000] {docker.py:413} INFO - [SUCCESSFUL ] org.apache.kafka#kafka-clients;3.4.1!kafka-clients.jar (1613ms)
+[2024-06-19T15:28:56.550+0000] {docker.py:413} INFO - downloading https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar ...
+[2024-06-19T15:28:56.806+0000] {docker.py:413} INFO - [SUCCESSFUL ] com.google.code.findbugs#jsr305;3.0.0!jsr305.jar (511ms)
+[2024-06-19T15:28:57.062+0000] {docker.py:413} INFO - downloading https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar ...
+[2024-06-19T15:28:57.326+0000] {docker.py:413} INFO - [SUCCESSFUL ] org.apache.commons#commons-pool2;2.11.1!commons-pool2.jar (517ms)
+[2024-06-19T15:28:57.585+0000] {docker.py:413} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-runtime/3.3.4/hadoop-client-runtime-3.3.4.jar ...
+[2024-06-19T15:29:01.167+0000] {docker.py:413} INFO - [SUCCESSFUL ] org.apache.hadoop#hadoop-client-runtime;3.3.4!hadoop-client-runtime.jar (3833ms)
+[2024-06-19T15:29:01.439+0000] {docker.py:413} INFO - downloading https://repo1.maven.org/maven2/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar ...
+[2024-06-19T15:29:01.782+0000] {docker.py:413} INFO - [SUCCESSFUL ] org.lz4#lz4-java;1.8.0!lz4-java.jar (597ms)
+[2024-06-19T15:29:02.041+0000] {docker.py:413} INFO - downloading https://repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.10.3/snappy-java-1.1.10.3.jar ...
+[2024-06-19T15:29:02.569+0000] {docker.py:413} INFO - [SUCCESSFUL ] org.xerial.snappy#snappy-java;1.1.10.3!snappy-java.jar(bundle) (782ms)
+[2024-06-19T15:29:02.826+0000] {docker.py:413} INFO - downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar ...
+[2024-06-19T15:29:03.081+0000] {docker.py:413} INFO - [SUCCESSFUL ] org.slf4j#slf4j-api;2.0.7!slf4j-api.jar (511ms)
+[2024-06-19T15:29:03.332+0000] {docker.py:413} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-api/3.3.4/hadoop-client-api-3.3.4.jar ...
+[2024-06-19T15:29:06.180+0000] {docker.py:413} INFO - [SUCCESSFUL ] org.apache.hadoop#hadoop-client-api;3.3.4!hadoop-client-api.jar (3089ms)
+[2024-06-19T15:29:06.438+0000] {docker.py:413} INFO - downloading https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar ...
+[2024-06-19T15:29:06.705+0000] {docker.py:413} INFO - [SUCCESSFUL ] commons-logging#commons-logging;1.1.3!commons-logging.jar (521ms)
+[2024-06-19T15:29:06.706+0000] {docker.py:413} INFO - :: resolution report :: resolve 27912ms :: artifacts dl 14815ms
+[2024-06-19T15:29:06.706+0000] {docker.py:413} INFO - :: modules in use:
+[2024-06-19T15:29:06.706+0000] {docker.py:413} INFO - com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+	commons-logging#commons-logging;1.1.3 from central in [default]
+	org.apache.commons#commons-pool2;2.11.1 from central in [default]
+[2024-06-19T15:29:06.706+0000] {docker.py:413} INFO - org.apache.hadoop#hadoop-client-api;3.3.4 from central in [default]
+[2024-06-19T15:29:06.707+0000] {docker.py:413} INFO - org.apache.hadoop#hadoop-client-runtime;3.3.4 from central in [default]
+[2024-06-19T15:29:06.707+0000] {docker.py:413} INFO - org.apache.kafka#kafka-clients;3.4.1 from central in [default]
+[2024-06-19T15:29:06.707+0000] {docker.py:413} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.0 from central in [default]
+	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.0 from central in [default]
+[2024-06-19T15:29:06.707+0000] {docker.py:413} INFO - org.checkerframework#checker-qual;3.5.0 from central in [default]
+[2024-06-19T15:29:06.708+0000] {docker.py:413} INFO - org.lz4#lz4-java;1.8.0 from central in [default]
+	org.postgresql#postgresql;42.5.4 from central in [default]
+[2024-06-19T15:29:06.708+0000] {docker.py:413} INFO - org.slf4j#slf4j-api;2.0.7 from central in [default]
+[2024-06-19T15:29:06.708+0000] {docker.py:413} INFO - org.xerial.snappy#snappy-java;1.1.10.3 from central in [default]
+[2024-06-19T15:29:06.708+0000] {docker.py:413} INFO - ---------------------------------------------------------------------
+[2024-06-19T15:29:06.708+0000] {docker.py:413} INFO - |                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+[2024-06-19T15:29:06.709+0000] {docker.py:413} INFO - |      default     |   13  |   13  |   13  |   0   ||   13  |   13  |
+	---------------------------------------------------------------------
+[2024-06-19T15:29:06.718+0000] {docker.py:413} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-838735bc-691c-406c-89fe-90538e7cc5c8
+[2024-06-19T15:29:06.719+0000] {docker.py:413} INFO - confs: [default]
+[2024-06-19T15:29:06.970+0000] {docker.py:413} INFO - 13 artifacts copied, 0 already retrieved (58001kB/251ms)
+[2024-06-19T15:29:07.317+0000] {docker.py:413} INFO - 24/06/19 15:29:07 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-06-19T15:29:08.689+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO SparkContext: Running Spark version 3.5.0
+[2024-06-19T15:29:08.691+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO SparkContext: OS info Linux, 6.6.12-linuxkit, aarch64
+[2024-06-19T15:29:08.692+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO SparkContext: Java version 17.0.10
+[2024-06-19T15:29:08.714+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO ResourceUtils: ==============================================================
+[2024-06-19T15:29:08.715+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-06-19T15:29:08.717+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO ResourceUtils: ==============================================================
+[2024-06-19T15:29:08.718+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO SparkContext: Submitted application: PostgreSQL Connection with PySpark
+[2024-06-19T15:29:08.742+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-06-19T15:29:08.748+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO ResourceProfile: Limiting resource is cpu
+[2024-06-19T15:29:08.749+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-06-19T15:29:08.805+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO SecurityManager: Changing view acls to: spark
+[2024-06-19T15:29:08.807+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO SecurityManager: Changing modify acls to: spark
+[2024-06-19T15:29:08.807+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO SecurityManager: Changing view acls groups to:
+[2024-06-19T15:29:08.808+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO SecurityManager: Changing modify acls groups to:
+[2024-06-19T15:29:08.809+0000] {docker.py:413} INFO - 24/06/19 15:29:08 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissions: EMPTY
+[2024-06-19T15:29:09.083+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO Utils: Successfully started service 'sparkDriver' on port 45125.
+[2024-06-19T15:29:09.111+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkEnv: Registering MapOutputTracker
+[2024-06-19T15:29:09.144+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkEnv: Registering BlockManagerMaster
+[2024-06-19T15:29:09.164+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-06-19T15:29:09.168+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-06-19T15:29:09.178+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-06-19T15:29:09.212+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-2c4c15ee-b601-4b0c-a6fa-1ef3d9cb350c
+[2024-06-19T15:29:09.228+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-06-19T15:29:09.244+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-06-19T15:29:09.433+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-06-19T15:29:09.498+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-06-19T15:29:09.569+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.5.4.jar at spark://localhost:45125/jars/org.postgresql_postgresql-42.5.4.jar with timestamp 1718810948664
+24/06/19 15:29:09 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar at spark://localhost:45125/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar with timestamp 1718810948664
+[2024-06-19T15:29:09.572+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.checkerframework_checker-qual-3.5.0.jar at spark://localhost:45125/jars/org.checkerframework_checker-qual-3.5.0.jar with timestamp 1718810948664
+24/06/19 15:29:09 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar at spark://localhost:45125/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar with timestamp 1718810948664
+24/06/19 15:29:09 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar at spark://localhost:45125/jars/org.apache.kafka_kafka-clients-3.4.1.jar with timestamp 1718810948664
+24/06/19 15:29:09 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar at spark://localhost:45125/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1718810948664
+24/06/19 15:29:09 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar at spark://localhost:45125/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1718810948664
+[2024-06-19T15:29:09.576+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar at spark://localhost:45125/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar with timestamp 1718810948664
+24/06/19 15:29:09 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar at spark://localhost:45125/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1718810948664
+24/06/19 15:29:09 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar at spark://localhost:45125/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar with timestamp 1718810948664
+24/06/19 15:29:09 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar at spark://localhost:45125/jars/org.slf4j_slf4j-api-2.0.7.jar with timestamp 1718810948664
+[2024-06-19T15:29:09.578+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar at spark://localhost:45125/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar with timestamp 1718810948664
+[2024-06-19T15:29:09.579+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar at spark://localhost:45125/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1718810948664
+[2024-06-19T15:29:09.579+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.5.4.jar at file:///opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.5.4.jar with timestamp 1718810948664
+[2024-06-19T15:29:09.580+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.5.4.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.postgresql_postgresql-42.5.4.jar
+[2024-06-19T15:29:09.640+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar with timestamp 1718810948664
+[2024-06-19T15:29:09.647+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar
+[2024-06-19T15:29:09.654+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.checkerframework_checker-qual-3.5.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.checkerframework_checker-qual-3.5.0.jar with timestamp 1718810948664
+[2024-06-19T15:29:09.657+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.checkerframework_checker-qual-3.5.0.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.checkerframework_checker-qual-3.5.0.jar
+[2024-06-19T15:29:09.675+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar with timestamp 1718810948664
+24/06/19 15:29:09 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar
+[2024-06-19T15:29:09.678+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar with timestamp 1718810948664
+[2024-06-19T15:29:09.685+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.kafka_kafka-clients-3.4.1.jar
+[2024-06-19T15:29:09.735+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1718810948664
+24/06/19 15:29:09 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/com.google.code.findbugs_jsr305-3.0.0.jar
+[2024-06-19T15:29:09.774+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1718810948664
+24/06/19 15:29:09 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.commons_commons-pool2-2.11.1.jar
+[2024-06-19T15:29:09.795+0000] {docker.py:413} INFO - 24/06/19 15:29:09 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar with timestamp 1718810948664
+24/06/19 15:29:09 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar
+[2024-06-19T15:29:10.618+0000] {docker.py:413} INFO - 24/06/19 15:29:10 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1718810948664
+24/06/19 15:29:10 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.lz4_lz4-java-1.8.0.jar
+[2024-06-19T15:29:10.635+0000] {docker.py:413} INFO - 24/06/19 15:29:10 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar at file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar with timestamp 1718810948664
+24/06/19 15:29:10 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.xerial.snappy_snappy-java-1.1.10.3.jar
+[2024-06-19T15:29:10.657+0000] {docker.py:413} INFO - 24/06/19 15:29:10 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar at file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar with timestamp 1718810948664
+[2024-06-19T15:29:10.661+0000] {docker.py:413} INFO - 24/06/19 15:29:10 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.slf4j_slf4j-api-2.0.7.jar
+[2024-06-19T15:29:10.675+0000] {docker.py:413} INFO - 24/06/19 15:29:10 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar with timestamp 1718810948664
+[2024-06-19T15:29:10.677+0000] {docker.py:413} INFO - 24/06/19 15:29:10 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.hadoop_hadoop-client-api-3.3.4.jar
+[2024-06-19T15:29:10.970+0000] {docker.py:413} INFO - 24/06/19 15:29:10 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar at file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1718810948664
+24/06/19 15:29:10 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/commons-logging_commons-logging-1.1.3.jar
+[2024-06-19T15:29:11.152+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Starting executor ID driver on host localhost
+[2024-06-19T15:29:11.155+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: OS info Linux, 6.6.12-linuxkit, aarch64
+[2024-06-19T15:29:11.157+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Java version 17.0.10
+[2024-06-19T15:29:11.160+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2024-06-19T15:29:11.164+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@5cc52b1 for default.
+[2024-06-19T15:29:11.169+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.185+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar
+[2024-06-19T15:29:11.187+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.202+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar
+[2024-06-19T15:29:11.206+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.207+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.commons_commons-pool2-2.11.1.jar
+[2024-06-19T15:29:11.210+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.5.4.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.211+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.5.4.jar has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.postgresql_postgresql-42.5.4.jar
+[2024-06-19T15:29:11.214+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.215+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.slf4j_slf4j-api-2.0.7.jar
+[2024-06-19T15:29:11.218+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.226+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.kafka_kafka-clients-3.4.1.jar
+[2024-06-19T15:29:11.227+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.228+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/com.google.code.findbugs_jsr305-3.0.0.jar
+[2024-06-19T15:29:11.231+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.232+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.lz4_lz4-java-1.8.0.jar
+[2024-06-19T15:29:11.237+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.238+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar
+[2024-06-19T15:29:11.242+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.256+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.hadoop_hadoop-client-api-3.3.4.jar
+[2024-06-19T15:29:11.263+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.264+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/commons-logging_commons-logging-1.1.3.jar
+[2024-06-19T15:29:11.268+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.checkerframework_checker-qual-3.5.0.jar with timestamp 1718810948664
+24/06/19 15:29:11 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.checkerframework_checker-qual-3.5.0.jar has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.checkerframework_checker-qual-3.5.0.jar
+[2024-06-19T15:29:11.271+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.273+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.xerial.snappy_snappy-java-1.1.10.3.jar
+[2024-06-19T15:29:11.279+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching spark://localhost:45125/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.382+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO TransportClientFactory: Successfully created connection to localhost/127.0.0.1:45125 after 73 ms (0 ms spent in bootstraps)
+[2024-06-19T15:29:11.422+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: Fetching spark://localhost:45125/jars/commons-logging_commons-logging-1.1.3.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp2823857474962052558.tmp
+[2024-06-19T15:29:11.495+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp2823857474962052558.tmp has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/commons-logging_commons-logging-1.1.3.jar
+[2024-06-19T15:29:11.500+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Adding file:/tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/commons-logging_commons-logging-1.1.3.jar to class loader default
+[2024-06-19T15:29:11.501+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching spark://localhost:45125/jars/org.postgresql_postgresql-42.5.4.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.501+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: Fetching spark://localhost:45125/jars/org.postgresql_postgresql-42.5.4.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp4084772824516637876.tmp
+[2024-06-19T15:29:11.508+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp4084772824516637876.tmp has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.postgresql_postgresql-42.5.4.jar
+[2024-06-19T15:29:11.512+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Adding file:/tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.postgresql_postgresql-42.5.4.jar to class loader default
+[2024-06-19T15:29:11.512+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching spark://localhost:45125/jars/org.checkerframework_checker-qual-3.5.0.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.513+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: Fetching spark://localhost:45125/jars/org.checkerframework_checker-qual-3.5.0.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp13144233711134691769.tmp
+[2024-06-19T15:29:11.515+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp13144233711134691769.tmp has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.checkerframework_checker-qual-3.5.0.jar
+[2024-06-19T15:29:11.517+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Adding file:/tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.checkerframework_checker-qual-3.5.0.jar to class loader default
+[2024-06-19T15:29:11.518+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching spark://localhost:45125/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.518+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: Fetching spark://localhost:45125/jars/org.apache.commons_commons-pool2-2.11.1.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp4586902502649791968.tmp
+[2024-06-19T15:29:11.519+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp4586902502649791968.tmp has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.commons_commons-pool2-2.11.1.jar
+[2024-06-19T15:29:11.521+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Adding file:/tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.commons_commons-pool2-2.11.1.jar to class loader default
+[2024-06-19T15:29:11.522+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching spark://localhost:45125/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.522+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: Fetching spark://localhost:45125/jars/com.google.code.findbugs_jsr305-3.0.0.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp4124382274996728043.tmp
+[2024-06-19T15:29:11.522+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp4124382274996728043.tmp has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/com.google.code.findbugs_jsr305-3.0.0.jar
+[2024-06-19T15:29:11.527+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Adding file:/tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/com.google.code.findbugs_jsr305-3.0.0.jar to class loader default
+[2024-06-19T15:29:11.527+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching spark://localhost:45125/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.528+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: Fetching spark://localhost:45125/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp10191661062091199279.tmp
+[2024-06-19T15:29:11.677+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp10191661062091199279.tmp has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.hadoop_hadoop-client-api-3.3.4.jar
+[2024-06-19T15:29:11.684+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Adding file:/tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.hadoop_hadoop-client-api-3.3.4.jar to class loader default
+[2024-06-19T15:29:11.686+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching spark://localhost:45125/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.687+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: Fetching spark://localhost:45125/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp14515541508677066244.tmp
+[2024-06-19T15:29:11.699+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp14515541508677066244.tmp has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.xerial.snappy_snappy-java-1.1.10.3.jar
+[2024-06-19T15:29:11.702+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Adding file:/tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.xerial.snappy_snappy-java-1.1.10.3.jar to class loader default
+[2024-06-19T15:29:11.703+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching spark://localhost:45125/jars/org.slf4j_slf4j-api-2.0.7.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.704+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: Fetching spark://localhost:45125/jars/org.slf4j_slf4j-api-2.0.7.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp12072245258376093742.tmp
+[2024-06-19T15:29:11.704+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp12072245258376093742.tmp has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.slf4j_slf4j-api-2.0.7.jar
+[2024-06-19T15:29:11.708+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Adding file:/tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.slf4j_slf4j-api-2.0.7.jar to class loader default
+24/06/19 15:29:11 INFO Executor: Fetching spark://localhost:45125/jars/org.apache.kafka_kafka-clients-3.4.1.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.709+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: Fetching spark://localhost:45125/jars/org.apache.kafka_kafka-clients-3.4.1.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp15253216822365814523.tmp
+[2024-06-19T15:29:11.737+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp15253216822365814523.tmp has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.kafka_kafka-clients-3.4.1.jar
+[2024-06-19T15:29:11.742+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Adding file:/tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.kafka_kafka-clients-3.4.1.jar to class loader default
+[2024-06-19T15:29:11.742+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching spark://localhost:45125/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar with timestamp 1718810948664
+24/06/19 15:29:11 INFO Utils: Fetching spark://localhost:45125/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp4432490127140445474.tmp
+[2024-06-19T15:29:11.743+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp4432490127140445474.tmp has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar
+[2024-06-19T15:29:11.745+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Adding file:/tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar to class loader default
+[2024-06-19T15:29:11.746+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching spark://localhost:45125/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.747+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: Fetching spark://localhost:45125/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp2890641611737752539.tmp
+[2024-06-19T15:29:11.858+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp2890641611737752539.tmp has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar
+[2024-06-19T15:29:11.862+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Adding file:/tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar to class loader default
+[2024-06-19T15:29:11.862+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching spark://localhost:45125/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.863+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: Fetching spark://localhost:45125/jars/org.lz4_lz4-java-1.8.0.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp1148237647155290667.tmp
+[2024-06-19T15:29:11.864+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp1148237647155290667.tmp has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.lz4_lz4-java-1.8.0.jar
+[2024-06-19T15:29:11.866+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Adding file:/tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.lz4_lz4-java-1.8.0.jar to class loader default
+[2024-06-19T15:29:11.867+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Fetching spark://localhost:45125/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar with timestamp 1718810948664
+[2024-06-19T15:29:11.867+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: Fetching spark://localhost:45125/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp14694169062549804410.tmp
+[2024-06-19T15:29:11.868+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/fetchFileTemp14694169062549804410.tmp has been previously copied to /tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar
+[2024-06-19T15:29:11.870+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Executor: Adding file:/tmp/spark-1f16be46-da30-4e8b-8a3e-ac77a5fcb1e2/userFiles-58f94f0d-9dc7-49a4-84db-ec9e3251687f/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar to class loader default
+[2024-06-19T15:29:11.882+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34099.
+24/06/19 15:29:11 INFO NettyBlockTransferService: Server created on localhost:34099
+[2024-06-19T15:29:11.882+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-06-19T15:29:11.884+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, localhost, 34099, None)
+[2024-06-19T15:29:11.888+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO BlockManagerMasterEndpoint: Registering block manager localhost:34099 with 434.4 MiB RAM, BlockManagerId(driver, localhost, 34099, None)
+[2024-06-19T15:29:11.889+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, localhost, 34099, None)
+[2024-06-19T15:29:11.890+0000] {docker.py:413} INFO - 24/06/19 15:29:11 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, localhost, 34099, None)
+[2024-06-19T15:29:12.290+0000] {docker.py:413} INFO - 2024-06-19 15:29:12,287:create_spark_session:INFO:Spark session created successfully
+[2024-06-19T15:29:12.294+0000] {docker.py:413} INFO - 24/06/19 15:29:12 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-06-19T15:29:12.296+0000] {docker.py:413} INFO - 24/06/19 15:29:12 INFO SharedState: Warehouse path is 'file:/opt/bitnami/spark/spark-warehouse'.
+[2024-06-19T15:29:13.802+0000] {docker.py:413} INFO - 2024-06-19 15:29:13,798:create_initial_dataframe:INFO:Initial dataframe for topic 'elements' created successfully
+[2024-06-19T15:29:13.841+0000] {docker.py:413} INFO - 2024-06-19 15:29:13,838:create_initial_dataframe:INFO:Initial dataframe for topic 'teams' created successfully
+[2024-06-19T15:29:13.864+0000] {docker.py:413} INFO - 2024-06-19 15:29:13,862:create_initial_dataframe:INFO:Initial dataframe for topic 'fixtures' created successfully
+[2024-06-19T15:29:14.347+0000] {docker.py:413} INFO - 24/06/19 15:29:14 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+[2024-06-19T15:29:14.531+0000] {docker.py:413} INFO - 2024-06-19 15:29:14,530:start_streaming:INFO:Starting streaming into elements
+[2024-06-19T15:29:14.788+0000] {docker.py:413} INFO - 2024-06-19 15:29:14,787:run:INFO:Callback Server Starting
+2024-06-19 15:29:14,787:run:INFO:Socket listening on ('127.0.0.1', 38389)
+[2024-06-19T15:29:14.811+0000] {docker.py:413} INFO - 24/06/19 15:29:14 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+[2024-06-19T15:29:14.857+0000] {docker.py:413} INFO - 24/06/19 15:29:14 INFO ResolveWriteToStream: Checkpoint root /tmp/checkpoints/elements resolved to file:/tmp/checkpoints/elements.
+[2024-06-19T15:29:14.857+0000] {docker.py:413} INFO - 24/06/19 15:29:14 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+[2024-06-19T15:29:14.934+0000] {docker.py:413} INFO - 24/06/19 15:29:14 INFO CheckpointFileManager: Writing atomically to file:/tmp/checkpoints/elements/metadata using temp file file:/tmp/checkpoints/elements/.metadata.cc9566e4-bb7a-4612-8446-c5964ba73508.tmp
+[2024-06-19T15:29:14.999+0000] {docker.py:413} INFO - 24/06/19 15:29:14 INFO CheckpointFileManager: Renamed temp file file:/tmp/checkpoints/elements/.metadata.cc9566e4-bb7a-4612-8446-c5964ba73508.tmp to file:/tmp/checkpoints/elements/metadata
+[2024-06-19T15:29:15.025+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO MicroBatchExecution: Starting [id = 50e36d4b-c38b-4e82-bd97-d7ddc57a4bae, runId = 8a7d4312-4a2b-416d-b1ed-7b058e11122d]. Use file:/tmp/checkpoints/elements to store the query checkpoint.
+[2024-06-19T15:29:15.044+0000] {docker.py:413} INFO - 2024-06-19 15:29:15,042:start_streaming:INFO:Starting streaming into teams
+[2024-06-19T15:29:15.055+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO MicroBatchExecution: Reading table [org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaTable@2a01dfc5] from DataSourceV2 named 'kafka' [org.apache.spark.sql.kafka010.KafkaSourceProvider@4f01ffab]
+[2024-06-19T15:29:15.077+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO ResolveWriteToStream: Checkpoint root /tmp/checkpoints/teams resolved to file:/tmp/checkpoints/teams.
+[2024-06-19T15:29:15.078+0000] {docker.py:413} INFO - 24/06/19 15:29:15 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+[2024-06-19T15:29:15.087+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO CheckpointFileManager: Writing atomically to file:/tmp/checkpoints/teams/metadata using temp file file:/tmp/checkpoints/teams/.metadata.6caefa49-5dd7-4715-a9e9-4628782e75f2.tmp
+[2024-06-19T15:29:15.102+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO OffsetSeqLog: BatchIds found from listing:
+[2024-06-19T15:29:15.103+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO OffsetSeqLog: BatchIds found from listing:
+[2024-06-19T15:29:15.104+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO MicroBatchExecution: Starting new streaming query.
+[2024-06-19T15:29:15.109+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO MicroBatchExecution: Stream started from {}
+[2024-06-19T15:29:15.123+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO CheckpointFileManager: Renamed temp file file:/tmp/checkpoints/teams/.metadata.6caefa49-5dd7-4715-a9e9-4628782e75f2.tmp to file:/tmp/checkpoints/teams/metadata
+[2024-06-19T15:29:15.135+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO MicroBatchExecution: Starting [id = f12e10d9-59ef-4d30-8ba2-917127afc7d0, runId = c635e25a-79bf-46ab-8ed5-fd9f320278ef]. Use file:/tmp/checkpoints/teams to store the query checkpoint.
+[2024-06-19T15:29:15.138+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO MicroBatchExecution: Reading table [org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaTable@49fb3e98] from DataSourceV2 named 'kafka' [org.apache.spark.sql.kafka010.KafkaSourceProvider@473cd80f]
+[2024-06-19T15:29:15.141+0000] {docker.py:413} INFO - 2024-06-19 15:29:15,140:start_streaming:INFO:Starting streaming into fixtures
+[2024-06-19T15:29:15.143+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO OffsetSeqLog: BatchIds found from listing: 
+24/06/19 15:29:15 INFO OffsetSeqLog: BatchIds found from listing: 
+24/06/19 15:29:15 INFO MicroBatchExecution: Starting new streaming query.
+24/06/19 15:29:15 INFO MicroBatchExecution: Stream started from {}
+[2024-06-19T15:29:15.187+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO ResolveWriteToStream: Checkpoint root /tmp/checkpoints/fixtures resolved to file:/tmp/checkpoints/fixtures.
+24/06/19 15:29:15 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+[2024-06-19T15:29:15.206+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO CheckpointFileManager: Writing atomically to file:/tmp/checkpoints/fixtures/metadata using temp file file:/tmp/checkpoints/fixtures/.metadata.7ff19872-e7c3-4839-a527-b2d5725fcd12.tmp
+[2024-06-19T15:29:15.299+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO CheckpointFileManager: Renamed temp file file:/tmp/checkpoints/fixtures/.metadata.7ff19872-e7c3-4839-a527-b2d5725fcd12.tmp to file:/tmp/checkpoints/fixtures/metadata
+[2024-06-19T15:29:15.350+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO MicroBatchExecution: Starting [id = 90a4c1f2-5311-4b91-a6b4-f5c83844f9a2, runId = e60f8862-0131-47c3-b3ac-1a66eeb5fc18]. Use file:/tmp/checkpoints/fixtures to store the query checkpoint.
+[2024-06-19T15:29:15.363+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO MicroBatchExecution: Reading table [org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaTable@6c91faa5] from DataSourceV2 named 'kafka' [org.apache.spark.sql.kafka010.KafkaSourceProvider@6256089f]
+[2024-06-19T15:29:15.370+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO OffsetSeqLog: BatchIds found from listing:
+[2024-06-19T15:29:15.378+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO OffsetSeqLog: BatchIds found from listing:
+[2024-06-19T15:29:15.384+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO MicroBatchExecution: Starting new streaming query.
+[2024-06-19T15:29:15.388+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO MicroBatchExecution: Stream started from {}
+[2024-06-19T15:29:15.988+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO AdminClientConfig: AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [kafka:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+[2024-06-19T15:29:15.991+0000] {docker.py:413} INFO - 24/06/19 15:29:15 INFO AdminClientConfig: AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [kafka:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+24/06/19 15:29:15 INFO AdminClientConfig: AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [kafka:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+[2024-06-19T15:29:16.212+0000] {docker.py:413} INFO - 24/06/19 15:29:16 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+24/06/19 15:29:16 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+24/06/19 15:29:16 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+24/06/19 15:29:16 INFO AppInfoParser: Kafka version: 3.4.1
+[2024-06-19T15:29:16.231+0000] {docker.py:413} INFO - 24/06/19 15:29:16 INFO AppInfoParser: Kafka commitId: 8a516edc2755df89
+24/06/19 15:29:16 INFO AppInfoParser: Kafka startTimeMs: 1718810956198
+[2024-06-19T15:29:16.235+0000] {docker.py:413} INFO - 24/06/19 15:29:16 INFO AppInfoParser: Kafka version: 3.4.1
+24/06/19 15:29:16 INFO AppInfoParser: Kafka commitId: 8a516edc2755df89
+[2024-06-19T15:29:16.237+0000] {docker.py:413} INFO - 24/06/19 15:29:16 INFO AppInfoParser: Kafka startTimeMs: 1718810956199
+[2024-06-19T15:29:16.245+0000] {docker.py:413} INFO - 24/06/19 15:29:16 INFO AppInfoParser: Kafka version: 3.4.1
+24/06/19 15:29:16 INFO AppInfoParser: Kafka commitId: 8a516edc2755df89
+24/06/19 15:29:16 INFO AppInfoParser: Kafka startTimeMs: 1718810956200
+[2024-06-19T15:29:16.902+0000] {docker.py:413} INFO - 24/06/19 15:29:16 INFO CheckpointFileManager: Writing atomically to file:/tmp/checkpoints/elements/sources/0/0 using temp file file:/tmp/checkpoints/elements/sources/0/.0.680fd4cc-d305-4bc2-8899-2b110e703939.tmp
+[2024-06-19T15:29:16.904+0000] {docker.py:413} INFO - 24/06/19 15:29:16 INFO CheckpointFileManager: Writing atomically to file:/tmp/checkpoints/fixtures/sources/0/0 using temp file file:/tmp/checkpoints/fixtures/sources/0/.0.802dfa8f-f88b-4324-aff0-28ff9cc52bb8.tmp
+[2024-06-19T15:29:16.906+0000] {docker.py:413} INFO - 24/06/19 15:29:16 INFO CheckpointFileManager: Writing atomically to file:/tmp/checkpoints/teams/sources/0/0 using temp file file:/tmp/checkpoints/teams/sources/0/.0.5de5b17a-3917-443f-8b03-c0c04e0795d7.tmp
+[2024-06-19T15:29:16.978+0000] {docker.py:413} INFO - 24/06/19 15:29:16 INFO CheckpointFileManager: Renamed temp file file:/tmp/checkpoints/teams/sources/0/.0.5de5b17a-3917-443f-8b03-c0c04e0795d7.tmp to file:/tmp/checkpoints/teams/sources/0/0
+[2024-06-19T15:29:16.981+0000] {docker.py:413} INFO - 24/06/19 15:29:16 INFO KafkaMicroBatchStream: Initial offsets: {"teams":{"0":860}}
+[2024-06-19T15:29:16.994+0000] {docker.py:413} INFO - 24/06/19 15:29:16 INFO CheckpointFileManager: Renamed temp file file:/tmp/checkpoints/fixtures/sources/0/.0.802dfa8f-f88b-4324-aff0-28ff9cc52bb8.tmp to file:/tmp/checkpoints/fixtures/sources/0/0
+24/06/19 15:29:16 INFO CheckpointFileManager: Renamed temp file file:/tmp/checkpoints/elements/sources/0/.0.680fd4cc-d305-4bc2-8899-2b110e703939.tmp to file:/tmp/checkpoints/elements/sources/0/0
+[2024-06-19T15:29:16.996+0000] {docker.py:413} INFO - 24/06/19 15:29:16 INFO KafkaMicroBatchStream: Initial offsets: {"elements":{"0":37195}}
+[2024-06-19T15:29:16.998+0000] {docker.py:413} INFO - 24/06/19 15:29:16 INFO KafkaMicroBatchStream: Initial offsets: {"fixtures":{"0":16340}}
+[2024-06-19T15:29:17.018+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO CheckpointFileManager: Writing atomically to file:/tmp/checkpoints/teams/offsets/0 using temp file file:/tmp/checkpoints/teams/offsets/.0.51978389-4dcb-4e61-b902-eefe336ae237.tmp
+[2024-06-19T15:29:17.024+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO CheckpointFileManager: Writing atomically to file:/tmp/checkpoints/fixtures/offsets/0 using temp file file:/tmp/checkpoints/fixtures/offsets/.0.d10021b6-99af-4a46-80e8-4808374de98e.tmp
+[2024-06-19T15:29:17.030+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO CheckpointFileManager: Writing atomically to file:/tmp/checkpoints/elements/offsets/0 using temp file file:/tmp/checkpoints/elements/offsets/.0.964175b9-cf98-4676-a67b-f252395219ca.tmp
+[2024-06-19T15:29:17.123+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO CheckpointFileManager: Renamed temp file file:/tmp/checkpoints/teams/offsets/.0.51978389-4dcb-4e61-b902-eefe336ae237.tmp to file:/tmp/checkpoints/teams/offsets/0
+[2024-06-19T15:29:17.124+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO CheckpointFileManager: Renamed temp file file:/tmp/checkpoints/elements/offsets/.0.964175b9-cf98-4676-a67b-f252395219ca.tmp to file:/tmp/checkpoints/elements/offsets/0
+[2024-06-19T15:29:17.125+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO MicroBatchExecution: Committed offsets for batch 0. Metadata OffsetSeqMetadata(0,1718810957003,Map(spark.sql.streaming.stateStore.providerClass -> org.apache.spark.sql.execution.streaming.state.HDFSBackedStateStoreProvider, spark.sql.streaming.join.stateFormatVersion -> 2, spark.sql.streaming.stateStore.compression.codec -> lz4, spark.sql.streaming.stateStore.rocksdb.formatVersion -> 5, spark.sql.streaming.statefulOperator.useStrictDistribution -> true, spark.sql.streaming.flatMapGroupsWithState.stateFormatVersion -> 2, spark.sql.streaming.multipleWatermarkPolicy -> min, spark.sql.streaming.aggregation.stateFormatVersion -> 2, spark.sql.shuffle.partitions -> 200))
+[2024-06-19T15:29:17.127+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO MicroBatchExecution: Committed offsets for batch 0. Metadata OffsetSeqMetadata(0,1718810957004,Map(spark.sql.streaming.stateStore.providerClass -> org.apache.spark.sql.execution.streaming.state.HDFSBackedStateStoreProvider, spark.sql.streaming.join.stateFormatVersion -> 2, spark.sql.streaming.stateStore.compression.codec -> lz4, spark.sql.streaming.stateStore.rocksdb.formatVersion -> 5, spark.sql.streaming.statefulOperator.useStrictDistribution -> true, spark.sql.streaming.flatMapGroupsWithState.stateFormatVersion -> 2, spark.sql.streaming.multipleWatermarkPolicy -> min, spark.sql.streaming.aggregation.stateFormatVersion -> 2, spark.sql.shuffle.partitions -> 200))
+[2024-06-19T15:29:17.130+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO CheckpointFileManager: Renamed temp file file:/tmp/checkpoints/fixtures/offsets/.0.d10021b6-99af-4a46-80e8-4808374de98e.tmp to file:/tmp/checkpoints/fixtures/offsets/0
+[2024-06-19T15:29:17.132+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO MicroBatchExecution: Committed offsets for batch 0. Metadata OffsetSeqMetadata(0,1718810957005,Map(spark.sql.streaming.stateStore.providerClass -> org.apache.spark.sql.execution.streaming.state.HDFSBackedStateStoreProvider, spark.sql.streaming.join.stateFormatVersion -> 2, spark.sql.streaming.stateStore.compression.codec -> lz4, spark.sql.streaming.stateStore.rocksdb.formatVersion -> 5, spark.sql.streaming.statefulOperator.useStrictDistribution -> true, spark.sql.streaming.flatMapGroupsWithState.stateFormatVersion -> 2, spark.sql.streaming.multipleWatermarkPolicy -> min, spark.sql.streaming.aggregation.stateFormatVersion -> 2, spark.sql.shuffle.partitions -> 200))
+[2024-06-19T15:29:17.549+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-19T15:29:17.554+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/06/19 15:29:17 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-19T15:29:17.633+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/06/19 15:29:17 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/06/19 15:29:17 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-19T15:29:17.764+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/06/19 15:29:17 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-19T15:29:17.777+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-19T15:29:17.780+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-19T15:29:17.805+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-19T15:29:17.811+0000] {docker.py:413} INFO - 24/06/19 15:29:17 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-19T15:29:18.925+0000] {docker.py:413} INFO - 24/06/19 15:29:18 INFO CodeGenerator: Code generated in 582.399709 ms
+[2024-06-19T15:29:18.929+0000] {docker.py:413} INFO - 24/06/19 15:29:18 INFO CodeGenerator: Code generated in 583.652792 ms
+[2024-06-19T15:29:19.076+0000] {docker.py:413} INFO - 24/06/19 15:29:19 INFO CodeGenerator: Code generated in 743.792876 ms
+[2024-06-19T15:29:19.241+0000] {docker.py:413} INFO - 2024-06-19 15:29:19,235:wait_for_commands:INFO:Python Server ready to receive messages
+2024-06-19 15:29:19,235:wait_for_commands:INFO:Received command c on object id p1
+2024-06-19 15:29:19,237:wait_for_commands:INFO:Python Server ready to receive messages
+2024-06-19 15:29:19,237:wait_for_commands:INFO:Received command c on object id p2
+[2024-06-19T15:29:19.508+0000] {docker.py:413} INFO - 2024-06-19 15:29:19,505:wait_for_commands:INFO:Python Server ready to receive messages
+[2024-06-19T15:29:19.512+0000] {docker.py:413} INFO - 2024-06-19 15:29:19,510:wait_for_commands:INFO:Received command c on object id p0
+[2024-06-19T15:29:19.928+0000] {docker.py:413} INFO - 2024-06-19 15:29:19,923:write_to_postgres:ERROR:Error writing batch 0 to fixtures: Column chance_of_playing_next_round not found in schema Some(StructType(StructField(code,StringType,true),StructField(event,StringType,true),StructField(finished,StringType,true),StructField(finished_provisional,StringType,true),StructField(id,StringType,true),StructField(kickoff_time,StringType,true),StructField(minutes,StringType,true),StructField(provisional_start_time,StringType,true),StructField(started,StringType,true),StructField(team_a,StringType,true),StructField(team_a_score,StringType,true),StructField(team_h,StringType,true),StructField(team_h_score,StringType,true),StructField(stats,StringType,true),StructField(team_h_difficulty,StringType,true),StructField(team_a_difficulty,StringType,true),StructField(pulse_id,StringType,true))).
+[2024-06-19T15:29:19.936+0000] {docker.py:413} INFO - 24/06/19 15:29:19 INFO CodeGenerator: Code generated in 31.147833 ms
+[2024-06-19T15:29:19.952+0000] {docker.py:413} INFO - 2024-06-19 15:29:19,945:write_to_postgres:ERROR:Error writing batch 0 to fixtures: Column draw not found in schema Some(StructType(StructField(code,StringType,true),StructField(event,StringType,true),StructField(finished,StringType,true),StructField(finished_provisional,StringType,true),StructField(id,StringType,true),StructField(kickoff_time,StringType,true),StructField(minutes,StringType,true),StructField(provisional_start_time,StringType,true),StructField(started,StringType,true),StructField(team_a,StringType,true),StructField(team_a_score,StringType,true),StructField(team_h,StringType,true),StructField(team_h_score,StringType,true),StructField(stats,StringType,true),StructField(team_h_difficulty,StringType,true),StructField(team_a_difficulty,StringType,true),StructField(pulse_id,StringType,true))).
+[2024-06-19T15:29:19.993+0000] {docker.py:413} INFO - 24/06/19 15:29:19 INFO CheckpointFileManager: Writing atomically to file:/tmp/checkpoints/elements/commits/0 using temp file file:/tmp/checkpoints/elements/commits/.0.72a20e6e-715e-482f-8df4-04b6632265a1.tmp
+[2024-06-19T15:29:20.015+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO CheckpointFileManager: Writing atomically to file:/tmp/checkpoints/teams/commits/0 using temp file file:/tmp/checkpoints/teams/commits/.0.8d885450-7aab-442a-98b4-a31a4d044d5a.tmp
+[2024-06-19T15:29:20.071+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO CheckpointFileManager: Renamed temp file file:/tmp/checkpoints/elements/commits/.0.72a20e6e-715e-482f-8df4-04b6632265a1.tmp to file:/tmp/checkpoints/elements/commits/0
+[2024-06-19T15:29:20.112+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO CheckpointFileManager: Renamed temp file file:/tmp/checkpoints/teams/commits/.0.8d885450-7aab-442a-98b4-a31a4d044d5a.tmp to file:/tmp/checkpoints/teams/commits/0
+[2024-06-19T15:29:20.184+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO MicroBatchExecution: Streaming query made progress: {
+  "id" : "50e36d4b-c38b-4e82-bd97-d7ddc57a4bae",
+  "runId" : "8a7d4312-4a2b-416d-b1ed-7b058e11122d",
+  "name" : null,
+  "timestamp" : "2024-06-19T15:29:15.093Z",
+  "batchId" : 0,
+  "numInputRows" : 0,
+  "inputRowsPerSecond" : 0.0,
+  "processedRowsPerSecond" : 0.0,
+  "durationMs" : {
+    "addBatch" : 2222,
+    "commitOffsets" : 141,
+    "getBatch" : 42,
+    "latestOffset" : 1896,
+    "queryPlanning" : 518,
+    "triggerExecution" : 4985,
+    "walCommit" : 113
+  },
+  "stateOperators" : [ ],
+  "sources" : [ {
+    "description" : "KafkaV2[Subscribe[elements]]",
+    "startOffset" : null,
+    "endOffset" : {
+      "elements" : {
+        "0" : 39790
+      }
+    },
+    "latestOffset" : {
+      "elements" : {
+        "0" : 39790
+      }
+    },
+    "numInputRows" : 0,
+    "inputRowsPerSecond" : 0.0,
+    "processedRowsPerSecond" : 0.0,
+    "metrics" : {
+      "avgOffsetsBehindLatest" : "0.0",
+      "maxOffsetsBehindLatest" : "0",
+      "minOffsetsBehindLatest" : "0"
+    }
+  } ],
+  "sink" : {
+    "description" : "ForeachBatchSink",
+    "numOutputRows" : -1
+  }
+}
+[2024-06-19T15:29:20.186+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO MicroBatchExecution: Streaming query made progress: {
+  "id" : "f12e10d9-59ef-4d30-8ba2-917127afc7d0",
+  "runId" : "c635e25a-79bf-46ab-8ed5-fd9f320278ef",
+  "name" : null,
+  "timestamp" : "2024-06-19T15:29:15.141Z",
+  "batchId" : 0,
+  "numInputRows" : 0,
+  "inputRowsPerSecond" : 0.0,
+  "processedRowsPerSecond" : 0.0,
+  "durationMs" : {
+    "addBatch" : 2247,
+    "commitOffsets" : 163,
+    "getBatch" : 41,
+    "latestOffset" : 1860,
+    "queryPlanning" : 517,
+    "triggerExecution" : 4968,
+    "walCommit" : 112
+  },
+  "stateOperators" : [ ],
+  "sources" : [ {
+    "description" : "KafkaV2[Subscribe[teams]]",
+    "startOffset" : null,
+    "endOffset" : {
+      "teams" : {
+        "0" : 920
+      }
+    },
+    "latestOffset" : {
+      "teams" : {
+        "0" : 920
+      }
+    },
+    "numInputRows" : 0,
+    "inputRowsPerSecond" : 0.0,
+    "processedRowsPerSecond" : 0.0,
+    "metrics" : {
+      "avgOffsetsBehindLatest" : "0.0",
+      "maxOffsetsBehindLatest" : "0",
+      "minOffsetsBehindLatest" : "0"
+    }
+  } ],
+  "sink" : {
+    "description" : "ForeachBatchSink",
+    "numOutputRows" : -1
+  }
+}
+[2024-06-19T15:29:20.215+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO SparkContext: Starting job: start at NativeMethodAccessorImpl.java:0
+[2024-06-19T15:29:20.266+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO DAGScheduler: Got job 0 (start at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2024-06-19T15:29:20.270+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO DAGScheduler: Final stage: ResultStage 0 (start at NativeMethodAccessorImpl.java:0)
+[2024-06-19T15:29:20.274+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO DAGScheduler: Parents of final stage: List()
+[2024-06-19T15:29:20.276+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO DAGScheduler: Missing parents: List()
+[2024-06-19T15:29:20.277+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[18] at start at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-06-19T15:29:20.725+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 51.3 KiB, free 434.3 MiB)
+[2024-06-19T15:29:20.847+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 19.5 KiB, free 434.3 MiB)
+[2024-06-19T15:29:20.856+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:34099 (size: 19.5 KiB, free: 434.4 MiB)
+[2024-06-19T15:29:20.864+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1580
+[2024-06-19T15:29:20.894+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[18] at start at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2024-06-19T15:29:20.899+0000] {docker.py:413} INFO - 24/06/19 15:29:20 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2024-06-19T15:29:21.025+0000] {docker.py:413} INFO - 24/06/19 15:29:21 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (localhost, executor driver, partition 0, PROCESS_LOCAL, 11068 bytes)
+[2024-06-19T15:29:21.058+0000] {docker.py:413} INFO - 24/06/19 15:29:21 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+[2024-06-19T15:29:21.549+0000] {docker.py:413} INFO - 24/06/19 15:29:21 INFO CodeGenerator: Code generated in 115.120375 ms
+[2024-06-19T15:29:21.585+0000] {docker.py:413} INFO - 24/06/19 15:29:21 INFO CodeGenerator: Code generated in 38.906542 ms
+[2024-06-19T15:29:21.621+0000] {docker.py:413} INFO - 24/06/19 15:29:21 INFO CodeGenerator: Code generated in 31.380333 ms
+[2024-06-19T15:29:26.114+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO CodeGenerator: Code generated in 34.606333 ms
+[2024-06-19T15:29:26.119+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO KafkaBatchReaderFactory: Creating Kafka reader topicPartition=fixtures-0 fromOffset=16340 untilOffset=17480, for query queryId=90a4c1f2-5311-4b91-a6b4-f5c83844f9a2 batchId=0 taskId=0 partitionId=0
+[2024-06-19T15:29:26.211+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO CodeGenerator: Code generated in 12.664708 ms
+[2024-06-19T15:29:26.234+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO CodeGenerator: Code generated in 16.672 ms
+[2024-06-19T15:29:26.260+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO ConsumerConfig: ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = none
+	bootstrap.servers = [kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+[2024-06-19T15:29:26.320+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO AppInfoParser: Kafka version: 3.4.1
+[2024-06-19T15:29:26.324+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO AppInfoParser: Kafka commitId: 8a516edc2755df89
+[2024-06-19T15:29:26.327+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO AppInfoParser: Kafka startTimeMs: 1718810966316
+[2024-06-19T15:29:26.328+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO KafkaConsumer: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Assigned to partition(s): fixtures-0
+[2024-06-19T15:29:26.336+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO KafkaConsumer: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Seeking to offset 16340 for partition fixtures-0
+[2024-06-19T15:29:26.360+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO Metadata: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Resetting the last seen epoch of partition fixtures-0 to 26 since the associated topicId changed from null to FJHFNb5sRXWkhHAifyctGg
+[2024-06-19T15:29:26.376+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO Metadata: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Cluster ID: hOTY4LfWQK6Gr4R4BaP8uA
+[2024-06-19T15:29:26.776+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Seeking to earliest offset of partition fixtures-0
+[2024-06-19T15:29:26.900+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Resetting offset for partition fixtures-0 to position FetchPosition{offset=16340, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 0 rack: null)], epoch=26}}.
+[2024-06-19T15:29:26.904+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Seeking to latest offset of partition fixtures-0
+[2024-06-19T15:29:26.906+0000] {docker.py:413} INFO - 24/06/19 15:29:26 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Resetting offset for partition fixtures-0 to position FetchPosition{offset=17480, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 0 rack: null)], epoch=26}}.
+[2024-06-19T15:29:27.778+0000] {docker.py:413} INFO - 24/06/19 15:29:27 INFO KafkaConsumer: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Seeking to offset 16823 for partition fixtures-0
+[2024-06-19T15:29:27.789+0000] {docker.py:413} INFO - 24/06/19 15:29:27 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Seeking to earliest offset of partition fixtures-0
+[2024-06-19T15:29:27.796+0000] {docker.py:413} INFO - 24/06/19 15:29:27 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Resetting offset for partition fixtures-0 to position FetchPosition{offset=16340, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 0 rack: null)], epoch=26}}.
+[2024-06-19T15:29:27.798+0000] {docker.py:413} INFO - 24/06/19 15:29:27 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Seeking to latest offset of partition fixtures-0
+[2024-06-19T15:29:27.799+0000] {docker.py:413} INFO - 24/06/19 15:29:27 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Resetting offset for partition fixtures-0 to position FetchPosition{offset=17480, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 0 rack: null)], epoch=26}}.
+[2024-06-19T15:29:27.966+0000] {docker.py:413} INFO - 24/06/19 15:29:27 INFO KafkaConsumer: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Seeking to offset 17310 for partition fixtures-0
+[2024-06-19T15:29:27.973+0000] {docker.py:413} INFO - 24/06/19 15:29:27 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Seeking to earliest offset of partition fixtures-0
+[2024-06-19T15:29:28.554+0000] {docker.py:413} INFO - 24/06/19 15:29:28 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Resetting offset for partition fixtures-0 to position FetchPosition{offset=16340, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 0 rack: null)], epoch=26}}.
+24/06/19 15:29:28 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Seeking to latest offset of partition fixtures-0
+[2024-06-19T15:29:28.558+0000] {docker.py:413} INFO - 24/06/19 15:29:28 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor-1, groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor] Resetting offset for partition fixtures-0 to position FetchPosition{offset=17480, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 0 rack: null)], epoch=26}}.
+[2024-06-19T15:29:28.915+0000] {docker.py:413} INFO - 24/06/19 15:29:28 INFO KafkaDataConsumer: From Kafka topicPartition=fixtures-0 groupId=spark-kafka-source-cfc7dc12-283f-4e77-b403-0703348aaf00-1740979553-executor read 1140 records through 3 polls (polled  out 1140 records), taking 1171140043 nanos, during time span of 2580733917 nanos.
+[2024-06-19T15:29:28.939+0000] {docker.py:413} INFO - 24/06/19 15:29:28 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1774 bytes result sent to driver
+[2024-06-19T15:29:28.951+0000] {docker.py:413} INFO - 24/06/19 15:29:28 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 7988 ms on localhost (executor driver) (1/1)
+[2024-06-19T15:29:28.954+0000] {docker.py:413} INFO - 24/06/19 15:29:28 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2024-06-19T15:29:28.983+0000] {docker.py:413} INFO - 24/06/19 15:29:28 INFO DAGScheduler: ResultStage 0 (start at NativeMethodAccessorImpl.java:0) finished in 8.677 s
+[2024-06-19T15:29:28.985+0000] {docker.py:413} INFO - 24/06/19 15:29:28 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2024-06-19T15:29:28.986+0000] {docker.py:413} INFO - 24/06/19 15:29:28 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2024-06-19T15:29:28.995+0000] {docker.py:413} INFO - 24/06/19 15:29:28 INFO DAGScheduler: Job 0 finished: start at NativeMethodAccessorImpl.java:0, took 8.781302 s
+[2024-06-19T15:29:29.079+0000] {docker.py:413} INFO - 2024-06-19 15:29:29,075:write_to_postgres:INFO:Batch 0 written to fixtures successfully.
+[2024-06-19T15:29:29.109+0000] {docker.py:413} INFO - 24/06/19 15:29:29 INFO CheckpointFileManager: Writing atomically to file:/tmp/checkpoints/fixtures/commits/0 using temp file file:/tmp/checkpoints/fixtures/commits/.0.79569781-d3a7-49ae-acbd-906b4f2653ae.tmp
+[2024-06-19T15:29:29.162+0000] {docker.py:413} INFO - 24/06/19 15:29:29 INFO CheckpointFileManager: Renamed temp file file:/tmp/checkpoints/fixtures/commits/.0.79569781-d3a7-49ae-acbd-906b4f2653ae.tmp to file:/tmp/checkpoints/fixtures/commits/0
+[2024-06-19T15:29:29.165+0000] {docker.py:413} INFO - 24/06/19 15:29:29 INFO MicroBatchExecution: Streaming query made progress: {
+  "id" : "90a4c1f2-5311-4b91-a6b4-f5c83844f9a2",
+  "runId" : "e60f8862-0131-47c3-b3ac-1a66eeb5fc18",
+  "name" : null,
+  "timestamp" : "2024-06-19T15:29:15.360Z",
+  "batchId" : 0,
+  "numInputRows" : 1140,
+  "inputRowsPerSecond" : 0.0,
+  "processedRowsPerSecond" : 82.6086956521739,
+  "durationMs" : {
+    "addBatch" : 11377,
+    "commitOffsets" : 82,
+    "getBatch" : 33,
+    "latestOffset" : 1640,
+    "queryPlanning" : 518,
+    "triggerExecution" : 13800,
+    "walCommit" : 122
+  },
+  "stateOperators" : [ ],
+  "sources" : [ {
+    "description" : "KafkaV2[Subscribe[fixtures]]",
+    "startOffset" : null,
+    "endOffset" : {
+      "fixtures" : {
+        "0" : 17480
+      }
+    },
+    "latestOffset" : {
+      "fixtures" : {
+        "0" : 17480
+      }
+    },
+    "numInputRows" : 1140,
+    "inputRowsPerSecond" : 0.0,
+    "processedRowsPerSecond" : 82.6086956521739,
+    "metrics" : {
+      "avgOffsetsBehindLatest" : "0.0",
+      "maxOffsetsBehindLatest" : "0",
+      "minOffsetsBehindLatest" : "0"
+    }
+  } ],
+  "sink" : {
+    "description" : "ForeachBatchSink",
+    "numOutputRows" : -1
+  }
+}
+[2024-06-19T15:29:29.734+0000] {docker.py:413} INFO - 24/06/19 15:29:29 INFO BlockManagerInfo: Removed broadcast_0_piece0 on localhost:34099 in memory (size: 19.5 KiB, free: 434.4 MiB)
+[2024-06-19T15:29:30.148+0000] {docker.py:413} INFO - 24/06/19 15:29:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/06/19 15:29:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:29:39.181+0000] {docker.py:413} INFO - 24/06/19 15:29:39 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:29:40.140+0000] {docker.py:413} INFO - 24/06/19 15:29:40 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:29:40.153+0000] {docker.py:413} INFO - 24/06/19 15:29:40 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:29:49.216+0000] {docker.py:413} INFO - 24/06/19 15:29:49 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:29:50.154+0000] {docker.py:413} INFO - 24/06/19 15:29:50 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:29:50.155+0000] {docker.py:413} INFO - 24/06/19 15:29:50 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:29:59.196+0000] {docker.py:413} INFO - 24/06/19 15:29:59 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:00.154+0000] {docker.py:413} INFO - 24/06/19 15:30:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:00.155+0000] {docker.py:413} INFO - 24/06/19 15:30:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:09.201+0000] {docker.py:413} INFO - 24/06/19 15:30:09 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:10.153+0000] {docker.py:413} INFO - 24/06/19 15:30:10 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:10.164+0000] {docker.py:413} INFO - 24/06/19 15:30:10 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:19.211+0000] {docker.py:413} INFO - 24/06/19 15:30:19 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:20.156+0000] {docker.py:413} INFO - 24/06/19 15:30:20 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:20.172+0000] {docker.py:413} INFO - 24/06/19 15:30:20 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:29.229+0000] {docker.py:413} INFO - 24/06/19 15:30:29 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:30.162+0000] {docker.py:413} INFO - 24/06/19 15:30:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:30.176+0000] {docker.py:413} INFO - 24/06/19 15:30:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:39.229+0000] {docker.py:413} INFO - 24/06/19 15:30:39 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:40.170+0000] {docker.py:413} INFO - 24/06/19 15:30:40 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:40.182+0000] {docker.py:413} INFO - 24/06/19 15:30:40 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:49.248+0000] {docker.py:413} INFO - 24/06/19 15:30:49 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:50.174+0000] {docker.py:413} INFO - 24/06/19 15:30:50 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:50.188+0000] {docker.py:413} INFO - 24/06/19 15:30:50 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:30:59.429+0000] {docker.py:413} INFO - 24/06/19 15:30:59 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:00.175+0000] {docker.py:413} INFO - 24/06/19 15:31:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:00.200+0000] {docker.py:413} INFO - 24/06/19 15:31:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:09.302+0000] {docker.py:413} INFO - 24/06/19 15:31:09 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:10.186+0000] {docker.py:413} INFO - 24/06/19 15:31:10 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:10.202+0000] {docker.py:413} INFO - 24/06/19 15:31:10 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:19.284+0000] {docker.py:413} INFO - 24/06/19 15:31:19 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:20.202+0000] {docker.py:413} INFO - 24/06/19 15:31:20 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:20.202+0000] {docker.py:413} INFO - 24/06/19 15:31:20 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:29.290+0000] {docker.py:413} INFO - 24/06/19 15:31:29 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:30.211+0000] {docker.py:413} INFO - 24/06/19 15:31:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:30.216+0000] {docker.py:413} INFO - 24/06/19 15:31:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:39.305+0000] {docker.py:413} INFO - 24/06/19 15:31:39 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:40.208+0000] {docker.py:413} INFO - 24/06/19 15:31:40 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/06/19 15:31:40 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:49.302+0000] {docker.py:413} INFO - 24/06/19 15:31:49 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:50.210+0000] {docker.py:413} INFO - 24/06/19 15:31:50 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:50.211+0000] {docker.py:413} INFO - 24/06/19 15:31:50 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:31:59.323+0000] {docker.py:413} INFO - 24/06/19 15:31:59 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:00.225+0000] {docker.py:413} INFO - 24/06/19 15:32:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:00.226+0000] {docker.py:413} INFO - 24/06/19 15:32:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:09.330+0000] {docker.py:413} INFO - 24/06/19 15:32:09 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:10.222+0000] {docker.py:413} INFO - 24/06/19 15:32:10 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:10.228+0000] {docker.py:413} INFO - 24/06/19 15:32:10 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:19.329+0000] {docker.py:413} INFO - 24/06/19 15:32:19 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:20.235+0000] {docker.py:413} INFO - 24/06/19 15:32:20 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/06/19 15:32:20 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:29.329+0000] {docker.py:413} INFO - 24/06/19 15:32:29 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:30.244+0000] {docker.py:413} INFO - 24/06/19 15:32:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/06/19 15:32:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:39.332+0000] {docker.py:413} INFO - 24/06/19 15:32:39 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:40.251+0000] {docker.py:413} INFO - 24/06/19 15:32:40 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:40.253+0000] {docker.py:413} INFO - 24/06/19 15:32:40 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:49.445+0000] {docker.py:413} INFO - 24/06/19 15:32:49 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:50.261+0000] {docker.py:413} INFO - 24/06/19 15:32:50 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:50.262+0000] {docker.py:413} INFO - 24/06/19 15:32:50 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:32:59.357+0000] {docker.py:413} INFO - 24/06/19 15:32:59 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:00.269+0000] {docker.py:413} INFO - 24/06/19 15:33:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:00.270+0000] {docker.py:413} INFO - 24/06/19 15:33:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:09.363+0000] {docker.py:413} INFO - 24/06/19 15:33:09 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:10.277+0000] {docker.py:413} INFO - 24/06/19 15:33:10 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/06/19 15:33:10 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:19.374+0000] {docker.py:413} INFO - 24/06/19 15:33:19 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:20.288+0000] {docker.py:413} INFO - 24/06/19 15:33:20 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:20.289+0000] {docker.py:413} INFO - 24/06/19 15:33:20 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:29.373+0000] {docker.py:413} INFO - 24/06/19 15:33:29 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:30.312+0000] {docker.py:413} INFO - 24/06/19 15:33:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:30.321+0000] {docker.py:413} INFO - 24/06/19 15:33:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:39.388+0000] {docker.py:413} INFO - 24/06/19 15:33:39 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:40.308+0000] {docker.py:413} INFO - 24/06/19 15:33:40 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:40.309+0000] {docker.py:413} INFO - 24/06/19 15:33:40 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:49.499+0000] {docker.py:413} INFO - 24/06/19 15:33:49 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:50.312+0000] {docker.py:413} INFO - 24/06/19 15:33:50 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/06/19 15:33:50 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:33:59.438+0000] {docker.py:413} INFO - 24/06/19 15:33:59 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:34:00.339+0000] {docker.py:413} INFO - 24/06/19 15:34:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/06/19 15:34:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:34:09.444+0000] {docker.py:413} INFO - 24/06/19 15:34:09 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:34:10.347+0000] {docker.py:413} INFO - 24/06/19 15:34:10 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/06/19 15:34:10 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+[2024-06-19T15:34:15.481+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2024-06-19T15:34:15.564+0000] {process_utils.py:131} INFO - Sending 15 to group 424. PIDs of all processes in the group: [424]
+[2024-06-19T15:34:15.603+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 424
+[2024-06-19T15:34:15.631+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-06-19T15:34:15.704+0000] {docker.py:505} INFO - Stopping docker container
+[2024-06-19T15:34:17.734+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 268, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http://docker-proxy:2375/v1.44/containers/create
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 348, in _run_image
+    return self._run_image_with_mounts([*self.mounts, tmp_mount], add_tmp_variable=True)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 375, in _run_image_with_mounts
+    self.container = self.cli.create_container(
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 431, in create_container
+    return self.create_container_from_config(config, name, platform)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 448, in create_container_from_config
+    return self._result(res, True)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 274, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 270, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.APIError: 400 Client Error for http://docker-proxy:2375/v1.44/containers/create: Bad Request ("invalid mount config for type "bind": bind source path does not exist: /host_mnt/private/tmp/airflowtmpimin1gpi")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 486, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 357, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 410, in _run_image_with_mounts
+    for log_chunk in logstream:
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/types/daemon.py", line 29, in __next__
+    return next(self._stream)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 422, in <genexpr>
+    gen = (data for (_, data) in gen)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/utils/socket.py", line 112, in frames_iter_no_tty
+    (stream, n) = next_frame_header(socket)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/utils/socket.py", line 84, in next_frame_header
+    data = read_exactly(socket, 8)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/utils/socket.py", line 69, in read_exactly
+    next_data = read(socket, n - len(data))
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/utils/socket.py", line 40, in read
+    poll.poll()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-06-19T15:34:17.753+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=kafka_spark_dag, task_id=pyspark_consumer, execution_date=20240619T112702, start_date=20240619T152821, end_date=20240619T153417
+[2024-06-19T15:34:17.796+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 184 for task pyspark_consumer (Task received SIGTERM signal; 424)
+[2024-06-19T15:34:17.816+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=424, status='terminated', exitcode=1, started='15:28:21') (424) terminated with exit code 1
+[2024-06-19T15:34:17.830+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2024-06-19T15:34:17.915+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

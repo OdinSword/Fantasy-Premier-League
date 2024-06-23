@@ -1,0 +1,3 @@
+[2024-06-20T12:00:05.787+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kafka_spark_dag.kafka_data_stream scheduled__2024-06-20T11:55:04.865006+00:00 [None]>
+[2024-06-20T12:00:05.791+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kafka_spark_dag.kafka_data_stream scheduled__2024-06-20T11:55:04.865006+00:00 [None]>
+[2024-06-20T12:00:05.792+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2

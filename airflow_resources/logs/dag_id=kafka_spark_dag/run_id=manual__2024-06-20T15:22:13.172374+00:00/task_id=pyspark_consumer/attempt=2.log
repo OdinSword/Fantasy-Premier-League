@@ -1,0 +1,36 @@
+[2024-06-20T15:53:46.040+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kafka_spark_dag.pyspark_consumer manual__2024-06-20T15:22:13.172374+00:00 [queued]>
+[2024-06-20T15:53:46.047+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kafka_spark_dag.pyspark_consumer manual__2024-06-20T15:22:13.172374+00:00 [queued]>
+[2024-06-20T15:53:46.048+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2024-06-20T15:53:46.058+0000] {taskinstance.py:1382} INFO - Executing <Task(DockerOperator): pyspark_consumer> on 2024-06-20 15:22:13.172374+00:00
+[2024-06-20T15:53:46.066+0000] {standard_task_runner.py:57} INFO - Started process 10192 to run task
+[2024-06-20T15:53:46.066+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'kafka_spark_dag', 'pyspark_consumer', 'manual__2024-06-20T15:22:13.172374+00:00', '--job-id', '238', '--raw', '--subdir', 'DAGS_FOLDER/dag_kafka_spark.py', '--cfg-path', '/tmp/tmp0kxmj8s4']
+[2024-06-20T15:53:46.067+0000] {standard_task_runner.py:85} INFO - Job 238: Subtask pyspark_consumer
+[2024-06-20T15:53:46.102+0000] {task_command.py:416} INFO - Running <TaskInstance: kafka_spark_dag.pyspark_consumer manual__2024-06-20T15:22:13.172374+00:00 [running]> on host 2ad9230613d5
+[2024-06-20T15:53:46.153+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='kafka_spark_dag' AIRFLOW_CTX_TASK_ID='pyspark_consumer' AIRFLOW_CTX_EXECUTION_DATE='2024-06-20T15:22:13.172374+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-20T15:22:13.172374+00:00'
+[2024-06-20T15:53:46.191+0000] {docker.py:343} INFO - Starting docker container from image rappel-conso/spark:latest
+[2024-06-20T15:53:46.242+0000] {docker.py:351} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2024-06-20T15:53:46.530+0000] {docker.py:413} INFO - [38;5;6mspark [38;5;5m15:53:46.52 [0m[38;5;2mINFO [0m ==>
+[2024-06-20T15:53:46.532+0000] {docker.py:413} INFO - [38;5;6mspark [38;5;5m15:53:46.53 [0m[38;5;2mINFO [0m ==> [1mWelcome to the Bitnami spark container[0m
+[2024-06-20T15:53:46.533+0000] {docker.py:413} INFO - [38;5;6mspark [38;5;5m15:53:46.53 [0m[38;5;2mINFO [0m ==> Subscribe to project updates by watching [1mhttps://github.com/bitnami/containers[0m
+[2024-06-20T15:53:46.535+0000] {docker.py:413} INFO - [38;5;6mspark [38;5;5m15:53:46.53 [0m[38;5;2mINFO [0m ==> Submit issues and feature requests at [1mhttps://github.com/bitnami/containers/issues[0m
+[2024-06-20T15:53:46.536+0000] {docker.py:413} INFO - [38;5;6mspark [38;5;5m15:53:46.53 [0m[38;5;2mINFO [0m ==>
+[2024-06-20T15:53:46.541+0000] {docker.py:413} INFO - 
+[2024-06-20T15:53:48.002+0000] {docker.py:413} INFO - :: loading settings :: url = jar:file:/opt/bitnami/spark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2024-06-20T15:53:48.061+0000] {docker.py:413} INFO - Ivy Default Cache set to: /opt/bitnami/spark/.ivy2/cache
+The jars for the packages stored in: /opt/bitnami/spark/.ivy2/jars
+[2024-06-20T15:53:48.066+0000] {docker.py:413} INFO - org.postgresql#postgresql added as a dependency
+org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+[2024-06-20T15:53:48.068+0000] {docker.py:413} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-2d839e6c-70b4-4362-bf5d-155e52144680;1.0
+	confs: [default]
+[2024-06-20T15:53:49.942+0000] {docker.py:413} INFO - found org.postgresql#postgresql;42.5.4 in central
+[2024-06-20T15:53:50.418+0000] {docker.py:413} INFO - found org.checkerframework#checker-qual;3.5.0 in central
+[2024-06-20T15:53:54.214+0000] {docker.py:413} INFO - found org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.0 in central
+[2024-06-20T15:53:55.116+0000] {docker.py:413} INFO - found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.0 in central
+[2024-06-20T15:53:55.638+0000] {docker.py:413} INFO - found org.apache.kafka#kafka-clients;3.4.1 in central
+[2024-06-20T15:53:56.146+0000] {docker.py:413} INFO - found org.lz4#lz4-java;1.8.0 in central
+[2024-06-20T15:53:56.263+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-06-20T15:53:56.271+0000] {process_utils.py:131} INFO - Sending 15 to group 10192. PIDs of all processes in the group: [10192]
+[2024-06-20T15:53:56.272+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 10192
+[2024-06-20T15:53:56.272+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-06-20T15:53:56.273+0000] {docker.py:505} INFO - Stopping docker container
+[2024-06-20T15:53:56.741+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=10192, status='terminated', exitcode=0, started='15:53:45') (10192) terminated with exit code 0

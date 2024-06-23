@@ -1,0 +1,35 @@
+[2024-06-18T12:06:15.478+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kafka_spark_dag.kafka_data_stream scheduled__2024-06-18T12:01:13.293298+00:00 [queued]>
+[2024-06-18T12:06:15.484+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kafka_spark_dag.kafka_data_stream scheduled__2024-06-18T12:01:13.293298+00:00 [queued]>
+[2024-06-18T12:06:15.484+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-06-18T12:06:15.493+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): kafka_data_stream> on 2024-06-18 12:01:13.293298+00:00
+[2024-06-18T12:06:15.498+0000] {standard_task_runner.py:57} INFO - Started process 19961 to run task
+[2024-06-18T12:06:15.502+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'kafka_spark_dag', 'kafka_data_stream', 'scheduled__2024-06-18T12:01:13.293298+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/dag_kafka_spark.py', '--cfg-path', '/tmp/tmpip40rbta']
+[2024-06-18T12:06:15.504+0000] {standard_task_runner.py:85} INFO - Job 35: Subtask kafka_data_stream
+[2024-06-18T12:06:15.535+0000] {task_command.py:416} INFO - Running <TaskInstance: kafka_spark_dag.kafka_data_stream scheduled__2024-06-18T12:01:13.293298+00:00 [running]> on host 2ad9230613d5
+[2024-06-18T12:06:15.587+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='kafka_spark_dag' AIRFLOW_CTX_TASK_ID='kafka_data_stream' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T12:01:13.293298+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T12:01:13.293298+00:00'
+[2024-06-18T12:06:15.591+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.3', 9092)]>: connecting to kafka:9092 [('172.18.0.3', 9092) IPv4]
+[2024-06-18T12:06:15.592+0000] {conn.py:1205} INFO - Probing node bootstrap-0 broker version
+[2024-06-18T12:06:15.593+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.3', 9092)]>: Connection complete.
+[2024-06-18T12:06:15.699+0000] {conn.py:1267} INFO - Broker version identified as 2.5.0
+[2024-06-18T12:06:15.700+0000] {conn.py:1268} INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+[2024-06-18T12:06:15.702+0000] {logging_mixin.py:154} INFO - {'baseurl': 'https://fantasy.premierleague.com/api', 'endpoints': [{'name': 'bootstrap-static', 'tables': ['elements', 'teams']}, {'name': 'fixtures'}]}
+[2024-06-18T12:06:16.492+0000] {conn.py:380} INFO - <BrokerConnection node_id=0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.3', 9092)]>: connecting to kafka:9092 [('172.18.0.3', 9092) IPv4]
+[2024-06-18T12:06:16.493+0000] {conn.py:410} INFO - <BrokerConnection node_id=0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.3', 9092)]>: Connection complete.
+[2024-06-18T12:06:16.493+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Closing connection. 
+[2024-06-18T12:07:16.444+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/src/kafka_client/kafka_stream_data.py", line 154, in stream
+    producer.send('{key}', json.dumps(data).encode("utf-8"))
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/producer/kafka.py", line 576, in send
+    self._wait_on_metadata(topic, self.config['max_block_ms'] / 1000.0)
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/producer/kafka.py", line 702, in _wait_on_metadata
+    raise Errors.KafkaTimeoutError(
+kafka.errors.KafkaTimeoutError: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+[2024-06-18T12:07:16.488+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=kafka_spark_dag, task_id=kafka_data_stream, execution_date=20240618T120113, start_date=20240618T120615, end_date=20240618T120716
+[2024-06-18T12:07:16.513+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 35 for task kafka_data_stream (KafkaTimeoutError: Failed to update metadata after 60.0 secs.; 19961)
+[2024-06-18T12:07:16.531+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-06-18T12:07:16.556+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
